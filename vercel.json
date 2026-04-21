@@ -1,9 +1,9 @@
 {
-  "name": "shopify-oauth-receiver",
   "builds": [
     { "src": "api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/auth/callback", "dest": "/api/auth/callback.js" }
+    { "src": "/api/auth/callback", "dest": "/api/auth/callback.js" },
+    { "src": "/", "dest": "/api/index.js" }
   ]
 }
