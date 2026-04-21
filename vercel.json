@@ -1,0 +1,11 @@
+{
+  "name": "shopify-oauth-receiver",
+  "version": "1.0.0",
+  "private": true,
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/auth/callback", "dest": "/api/auth/callback.js" }
+  ]
+}

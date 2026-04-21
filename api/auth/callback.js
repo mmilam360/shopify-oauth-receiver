@@ -16,12 +16,12 @@ export default async function handler(req, res) {
   
   const data = await tokenRes.json();
   
-  res.status(200).send(`
+  res.status(200).setHeader('Content-Type', 'text/html').send(`
     <html><body style="font-family:monospace;padding:40px">
     <h1>Token received!</h1>
     <p>Copy this token and send it to Leo:</p>
-    <pre style="background:#f0f0f0;padding:20px;font-size:16px;word-break:break-all">${data.access_token}</pre>
-    <p>Scopes: ${data.scope}</p>
+    <pre style="background:#f0f0f0;padding:20px;font-size:16px;word-break:break-all">${data.access_token || JSON.stringify(data)}</pre>
+    <p>Scopes: ${data.scope || 'N/A'}</p>
     </body></html>
   `);
 }
